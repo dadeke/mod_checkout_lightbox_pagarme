@@ -39,6 +39,7 @@ class ModCheckoutLightboxPagarMeHelper
 		$content = array();
 		$content['amount'] = strval($result->amount * $quantity);			/* Valor total. */
 		$content['api_key'] = $result->api_key;								/* Chave de API. */
+		$content['metadata']['product_code'] = $result->product_code;		/* Identificador do item. */
 
 		$ch = curl_init("https://api.pagar.me/1/transactions/" . $token . "/capture");
 		curl_setopt($ch, CURLOPT_POST, true);
