@@ -23,9 +23,9 @@
 		<folder>images</folder>
 		<folder>js</folder>
 	</media>
-	<!-- <updateservers>
+	<updateservers>
 		<server type="extension" priority="1" name="MOD_LIGHTBOXPAGARME">https://deividsondeveloper.s3.amazonaws.com/joomla/mod_checkout_lightbox_pagarme.xml</server>
-	</updateservers> -->
+	</updateservers>
 	<languages>
 		<language tag="en-GB">language/en-GB/en-GB.mod_checkout_lightbox_pagarme.ini</language>
 		<language tag="en-GB">language/en-GB/en-GB.mod_checkout_lightbox_pagarme.sys.ini</language>
