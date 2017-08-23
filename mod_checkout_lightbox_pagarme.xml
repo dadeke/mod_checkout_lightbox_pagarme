@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="module" group="" method="upgrade">
+	<name>MOD_LIGHTBOXPAGARME</name>
+	<version>1.0.0</version>
+	<creationDate>07 September 2017</creationDate>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<copyright>2017 Deividson</copyright>
+	<author>Deividson Developer (http://deividson.net)</author>
+	<authorEmail>developer@deividson.net</authorEmail>
+	<authorUrl>http://deividson.net</authorUrl>
+	<description>MOD_LIGHTBOXPAGARME_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_checkout_lightbox_pagarme">helper.php</filename>
+		<filename module="mod_checkout_lightbox_pagarme">index.html</filename>
+		<filename module="mod_checkout_lightbox_pagarme">mod_checkout_lightbox_pagarme.php</filename>
+		<filename module="mod_checkout_lightbox_pagarme">mod_checkout_lightbox_pagarme.xml</filename>
+		<folder module="mod_checkout_lightbox_pagarme">fields</folder>
+		<folder module="mod_checkout_lightbox_pagarme">tmpl</folder>
+	</files>
+	<media folder="media/mod_checkout_lightbox_pagarme" destination="mod_checkout_lightbox_pagarme">
+		<filename>index.html</filename>
+		<folder>css</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+	</media>
+	<!-- <updateservers>
+		<server type="extension" priority="1" name="MOD_LIGHTBOXPAGARME">https://deividsondeveloper.s3.amazonaws.com/joomla/mod_checkout_lightbox_pagarme.xml</server>
+	</updateservers> -->
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_checkout_lightbox_pagarme.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_checkout_lightbox_pagarme.sys.ini</language>
+		<language tag="pt-BR">language/pt-BR/pt-BR.mod_checkout_lightbox_pagarme.ini</language>
+		<language tag="pt-BR">language/pt-BR/pt-BR.mod_checkout_lightbox_pagarme.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_checkout_lightbox_pagarme/fields">
+			<fieldset name="basic">
+				<field
+					name="instructions"
+					type="note"
+					label="MOD_LIGHTBOXPAGARME_INSTRUCTIONS_LABEL"
+					description="MOD_LIGHTBOXPAGARME_INSTRUCTIONS_DESC"
+				/>
+				<field
+					name="note1"
+					type="note"
+					class="alert alert-info"
+					label="MOD_LIGHTBOXPAGARME_NOTE1_LABEL"
+					description="MOD_LIGHTBOXPAGARME_NOTE1_DESC"
+				/>
+				<field
+					name="api_key"
+					type="text"
+					label="MOD_LIGHTBOXPAGARME_APIKEY_LABEL"
+					description="MOD_LIGHTBOXPAGARME_APIKEY_DESC"
+					required="true"
+					maxlength="38"
+				/>
+				<field
+					name="encryption_key"
+					type="text"
+					label="MOD_LIGHTBOXPAGARME_EK_LABEL"
+					description="MOD_LIGHTBOXPAGARME_EK_DESC"
+					required="true"
+					maxlength="38"
+				/>
+				<field
+					name="payment_methods"
+					type="list"
+					label="MOD_LIGHTBOXPAGARME_PM_LABEL"
+					description="MOD_LIGHTBOXPAGARME_PM_DESC"
+					default="boleto,credit_card"
+					>
+					<option value="boleto,credit_card">MOD_LIGHTBOXPAGARME_PM_OPTION1</option>
+					<option value="credit_card">MOD_LIGHTBOXPAGARME_PM_OPTION2</option>
+					<option value="boleto">MOD_LIGHTBOXPAGARME_PM_OPTION3</option>
+				</field>
+				<field
+					name="ui_color"
+					type="color"
+					label="MOD_LIGHTBOXPAGARME_UI_COLOR_LABEL"
+					description="MOD_LIGHTBOXPAGARME_UI_COLOR_DESC"
+					required="true"
+					default="#1a6ee1"
+				/>
+				<field
+					name="note2"
+					type="note"
+					class="alert alert-info"
+					label="MOD_LIGHTBOXPAGARME_NOTE2_LABEL"
+					description="MOD_LIGHTBOXPAGARME_NOTE2_DESC"
+				/>
+				<field
+					name="show_product_code"
+					type="radio"
+					label="MOD_LIGHTBOXPAGARME_SHOW_PRODUCT_CODE_LABEL"
+					description="MOD_LIGHTBOXPAGARME_SHOW_PRODUCT_CODE_DESC"
+					default="0"
+					class="btn-group btn-group-yesno"
+					>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+					name="product_code"
+					type="text"
+					label="MOD_LIGHTBOXPAGARME_PRODUCT_CODE_LABEL"
+					description="MOD_LIGHTBOXPAGARME_PRODUCT_CODE_DESC"
+					required="true"
+					maxlength="100"
+				/>
+				<field
+					name="product_name"
+					type="text"
+					label="MOD_LIGHTBOXPAGARME_PRODUCT_NAME_LABEL"
+					description="MOD_LIGHTBOXPAGARME_PRODUCT_NAME_DESC"
+					required="true"
+					maxlength="100"
+				/>
+				<field
+					name="product_description"
+					type="editor"
+					label="MOD_LIGHTBOXPAGARME_PRODUCT_DESCRIPTION_LABEL"
+					description="MOD_LIGHTBOXPAGARME_PRODUCT_DESCRIPTION_DESC"
+					height="100"
+					filter="safehtml"
+				/>
+				<field
+					name="show_quantity"
+					type="radio"
+					label="MOD_LIGHTBOXPAGARME_SHOW_QUANTITY_LABEL"
+					description="MOD_LIGHTBOXPAGARME_SHOW_QUANTITY_DESC"
+					default="1"
+					class="btn-group btn-group-yesno"
+					>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+					name="quantity"
+					type="onlynumber"
+					label="MOD_LIGHTBOXPAGARME_QUANTITY_LABEL"
+					description="MOD_LIGHTBOXPAGARME_QUANTITY_DESC"
+					required="true"
+					default="1"
+					maxlength="3"
+				/>
+				<field
+					name="amount"
+					type="currencybrl"
+					label="MOD_LIGHTBOXPAGARME_AMOUNT_LABEL"
+					description="MOD_LIGHTBOXPAGARME_AMOUNT_DESC"
+					required="true"
+					maxlength="10"
+				/>
+			</fieldset>
+			<fieldset name="credit_card">
+				<field
+					name="note3"
+					type="note"
+					class="alert alert-info"
+					label="MOD_LIGHTBOXPAGARME_NOTE3_LABEL"
+					description="MOD_LIGHTBOXPAGARME_NOTE3_DESC"
+				/>
+				<field
+					name="max_installments"
+					type="list"
+					label="MOD_LIGHTBOXPAGARME_CCMI_LABEL"
+					description="MOD_LIGHTBOXPAGARME_CCMI_DESC"
+					default="1"
+					>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+				</field>
+				<field
+					name="default_installment"
+					type="list"
+					label="MOD_LIGHTBOXPAGARME_CCDI_LABEL"
+					description="MOD_LIGHTBOXPAGARME_CCDI_DESC"
+					default="1"
+					>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+				</field>
+				<field
+					name="interest_rate"
+					type="onlynumber"
+					label="MOD_LIGHTBOXPAGARME_CCIR_LABEL"
+					description="MOD_LIGHTBOXPAGARME_CCIR_DESC"
+					required="true"
+					default="0"
+					maxlength="2"
+				/>
+				<field
+					name="free_installments"
+					type="list"
+					label="MOD_LIGHTBOXPAGARME_CCFI_LABEL"
+					description="MOD_LIGHTBOXPAGARME_CCFI_DESC"
+					default="1"
+					>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+				</field>
+			</fieldset>
+			<fieldset name="boleto">
+				<field
+					name="note4"
+					type="note"
+					class="alert alert-info"
+					label="MOD_LIGHTBOXPAGARME_NOTE4_LABEL"
+					description="MOD_LIGHTBOXPAGARME_NOTE4_DESC"
+				/>
+				<field
+					name="boleto_helper_text"
+					type="text"
+					label="MOD_LIGHTBOXPAGARME_BHT_LABEL"
+					description="MOD_LIGHTBOXPAGARME_BHT_DESC"
+					maxlength="150"
+				/>
+				<field
+					name="boleto_discount_type"
+					type="list"
+					label="MOD_LIGHTBOXPAGARME_BDT_LABEL"
+					description="MOD_LIGHTBOXPAGARME_BDT_DESC"
+					default="none"
+					>
+					<option value="none">MOD_LIGHTBOXPAGARME_BDT_OPTION1</option>
+					<option value="fixed">MOD_LIGHTBOXPAGARME_BDT_OPTION2</option>
+					<option value="percentage">MOD_LIGHTBOXPAGARME_BDT_OPTION3</option>
+				</field>
+				<field
+					name="boleto_discount_amount"
+					type="currencybrl"
+					label="MOD_LIGHTBOXPAGARME_BDA_LABEL"
+					description="MOD_LIGHTBOXPAGARME_BDA_DESC"
+					required="true"
+					default="0"
+					maxlength="10"
+					showon="boleto_discount_type:fixed"
+				/>
+				<field
+					name="boleto_discount_percentage"
+					type="onlynumber"
+					label="MOD_LIGHTBOXPAGARME_BDP_LABEL"
+					description="MOD_LIGHTBOXPAGARME_BDP_DESC"
+					required="true"
+					default="0"
+					maxlength="2"
+					showon="boleto_discount_type:percentage"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

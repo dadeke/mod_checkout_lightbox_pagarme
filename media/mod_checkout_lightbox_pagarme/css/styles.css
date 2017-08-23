@@ -1,0 +1,17 @@
+/**
+ * @package Checkout Lightbox with Pagar.me
+ * @author Deividson Developer
+ * @copyright 2017 Deividson (deividson.net)
+ * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ */
+ 
+.pagarme-checkout-btn {
+    width: 186px !important;
+    height: 56px;
+    background: transparent url(../images/botao-comprar.png) no-repeat center center;
+    border: none;
+}
+
+.quantity {
+	width: 25px;
+}
