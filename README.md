@@ -8,11 +8,11 @@ Please refer questions about this extension in https://groups.google.com/forum/#
 ## Video demo:
 [![Demo of the Checkout Lightbox with Pagar.me](https://i.vimeocdn.com/video/655585553.webp?mw=960&mh=540)](https://player.vimeo.com/video/234082768)
 
-## Testing purchase with brazilian Boleto:
-[![Testing purchase with brazilian Boleto](https://i.vimeocdn.com/video/655587785.webp?mw=960&mh=540)](https://player.vimeo.com/video/233767694)
-
 ## Testing purchase with Credit card:
 [![Testing purchase with Credit card](https://i.vimeocdn.com/video/655588284.webp?mw=960&mh=540)](https://player.vimeo.com/video/233767530)
+
+## Testing purchase with brazilian Boleto:
+[![Testing purchase with brazilian Boleto](https://i.vimeocdn.com/video/655587785.webp?mw=960&mh=540)](https://player.vimeo.com/video/233767694)
 
 ***
 
