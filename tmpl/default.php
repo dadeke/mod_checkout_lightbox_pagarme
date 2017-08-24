@@ -47,6 +47,10 @@ JText::script('MOD_LIGHTBOXPAGARME_BOLETO_LINK');
 		</label>
 	</div>
 </div>
+<?php } else { ?>
+<input id="quantity<?php echo $module->id; ?>"
+	type="hidden"
+	value="<?php echo $quantity; ?>" />
 <?php } ?>
 <div class="control-group">
 	<div class="control-label">

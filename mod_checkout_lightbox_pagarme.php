@@ -23,6 +23,7 @@ $boleto_helper_text = $params->get('boleto_helper_text');
 $boleto_discount_type = $params->get('boleto_discount_type');
 $boleto_discount_amount = $params->get('boleto_discount_amount');
 $boleto_discount_percentage = $params->get('boleto_discount_percentage');
+$show_product_code = $params->get('show_product_code');
 $product_code = $params->get('product_code');
 $product_name = $params->get('product_name');
 $product_description = $params->get('product_description');
