@@ -37,7 +37,7 @@ JText::script('MOD_LIGHTBOXPAGARME_BOLETO_LINK');
 	<div class="control-label">
 		<label>
 			<?php echo JText::_('MOD_LIGHTBOXPAGARME_SQUANTITY_LABEL'); ?>
-			<?php if(($allow_quantity_change == "1") || ($allow_quantity_change == "")) { ?>
+			<?php if($allow_quantity_change == "1") { ?>
 			<input id="quantity<?php echo $module->id; ?>"
 				type="text"
 				class="quantity"
