@@ -37,6 +37,7 @@ JText::script('MOD_LIGHTBOXPAGARME_BOLETO_LINK');
 	<div class="control-label">
 		<label>
 			<?php echo JText::_('MOD_LIGHTBOXPAGARME_SQUANTITY_LABEL'); ?>
+			<?php if(($allow_quantity_change == "1") || ($allow_quantity_change == "")) { ?>
 			<input id="quantity<?php echo $module->id; ?>"
 				type="text"
 				class="quantity"
@@ -44,6 +45,12 @@ JText::script('MOD_LIGHTBOXPAGARME_BOLETO_LINK');
 				onkeypress="return vnumber(event);"
 				maxlength="3"
 				required />
+			<?php } else if($allow_quantity_change == "0") { ?>
+			<?php echo $quantity; ?>
+			<input id="quantity<?php echo $module->id; ?>"
+				type="hidden"
+				value="<?php echo $quantity; ?>" />
+			<?php } ?>
 		</label>
 	</div>
 </div>
@@ -54,7 +61,7 @@ JText::script('MOD_LIGHTBOXPAGARME_BOLETO_LINK');
 <?php } ?>
 <div class="control-group">
 	<div class="control-label">
-		<label><?php echo JText::_('MOD_LIGHTBOXPAGARME_SBRL_LABEL').$amount_brl; ?></label>
+		<label><?php echo JText::_('MOD_LIGHTBOXPAGARME_SBRL_LABEL').$amount; ?></label>
 	</div>
 </div>
 <input id="buttonpay<?php echo $module->id; ?>"

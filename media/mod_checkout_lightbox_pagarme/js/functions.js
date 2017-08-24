@@ -87,8 +87,15 @@ function ProcessarPagarme(obj) {
 	message_div.attr("class", "alert alert-danger hide");
 
 	var quantity_str = jQuery('#quantity' + obj.id).val();
-	var quantity = parseInt(quantity_str, 10);
+	var quantity = 1;
+	if(jQuery.trim(quantity_str) != "") {
+		quantity = parseInt(quantity_str, 10);
+	}
+	else {
+		quantity_str = "1";
+	}
 	var amount = String(obj.amount * quantity);
+	amount = amount.replace(".", "");
 
 	var headerText = Joomla.JText._("MOD_LIGHTBOXPAGARME_CHECKOUT_INFO");
 	headerText = headerText.replace("#product_name", obj.product_name);

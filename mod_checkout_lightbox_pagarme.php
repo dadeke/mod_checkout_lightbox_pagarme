@@ -28,14 +28,10 @@ $product_code = $params->get('product_code');
 $product_name = $params->get('product_name');
 $product_description = $params->get('product_description');
 $show_quantity = $params->get('show_quantity');
+$allow_quantity_change = $params->get('allow_quantity_change');
 $quantity = $params->get('quantity');
 $amount = $params->get('amount');
-
-$amount = floatval(str_replace(',', '.', $amount));
-$amount = $amount * intval($quantity);
-$amount_api = number_format($amount, 2, '', ''); /* O Valor para API tem que ser sem separador decimal. */
-$amount_brl = number_format($amount, 2, ',', '.');
-$amount = number_format($amount, 2, '.', '');
+$amount_api = str_replace(array('.', ','), '', $amount); /* O valor para API deve ser sem separador de milhar e de decimal. */
 
 $app = JFactory::getApplication();
 $menu_itemid = $app->getMenu()->getActive()->id;
